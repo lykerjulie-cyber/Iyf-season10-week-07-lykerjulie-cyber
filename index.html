@@ -2,32 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IYF Week 7 To-Do</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7: JS Best Practices - Juliet Adhiambo</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div class="app">
-        <h1>To-Do List</h1>
-        
-        <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Add a task..." required>
-            <button type="submit">Add</button>
-        </form>
-
-        <div class="filters">
-            <button data-filter="all" class="active">All</button>
-            <button data-filter="active">Active</button>
-            <button data-filter="completed">Completed</button>
+<body data-theme="violet">
+    <header>
+        <h1>Juliet's JS Best Practices</h1>
+        <div class="header-controls">
+            <span>Juliet Adhiambo | Age: 32 | Nairobi, KE</span>
+            <button id="theme-toggle">Switch to Green</button>
+            <div class="cart-badge">
+                Cart: <span id="cart-count">0</span>
+            </div>
         </div>
+    </header>
 
-        <ul id="todo-list"></ul>
-        
-        <div class="stats">
-            <span id="todo-count">0 items left</span>
-            <button id="clear-completed">Clear Completed</button>
-        </div>
-    </div>
+    <main>
+        <section id="todo-section">
+            <h2>Persistent To-Do List</h2>
+            <div class="todo-controls">
+                <input type="text" id="todo-input" placeholder="Add task for Juliet...">
+                <button id="add-todo">Add</button>
+            </div>
+            <div class="filters">
+                <button data-filter="all" class="active">All</button>
+                <button data-filter="active">Active</button>
+                <button data-filter="completed">Completed</button>
+            </div>
+            <ul id="todo-list"></ul>
+            <p>Total: <span id="count">0</span></p>
+        </section>
+
+        <section id="cart-section">
+            <h2>Shopping Cart - Juliet's Store</h2>
+            <div id="product-list" class="products"></div>
+            <div id="cart-display">
+                <h3>Your Cart</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+                <button id="clear-cart">Clear Cart</button>
+            </div>
+        </section>
+
+        <section id="form-section">
+            <h2>Auto-Save Form - Day 3 Challenge</h2>
+            <form id="juliet-form">
+                <input type="text" name="name" placeholder="Your name" value="Juliet Adhiambo">
+                <input type="email" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p class="save-status">Auto-saves every 5s to sessionStorage</p>
+        </section>
+    </main>
 
     <script type="module" src="js/app.js"></script>
 </body>
-              </html>
+</html>
