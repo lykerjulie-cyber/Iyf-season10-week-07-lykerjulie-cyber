@@ -1,23 +1,23 @@
-const STORAGE_PREFIX = 'iyf_todos_';
+const STORAGE_PREFIX = 'juliet_';
 
-export function save(key, data) {
+export function saveToStorage(key, data) {
     try {
         localStorage.setItem(STORAGE_PREFIX + key, JSON.stringify(data));
     } catch (e) {
-        console.error('Failed to save to localStorage:', e);
+        console.error('Storage failed:', e);
     }
 }
 
-export function load(key, defaultValue = null) {
+export function getFromStorage(key, defaultValue = null) {
     try {
         const data = localStorage.getItem(STORAGE_PREFIX + key);
-        return data ? JSON.parse(data) : defaultValue;
+        return data? JSON.parse(data) : defaultValue;
     } catch (e) {
-        console.error('Failed to parse localStorage:', e);
+        console.error('Parse failed:', e);
         return defaultValue;
     }
 }
 
-export function remove(key) {
+export function removeFromStorage(key) {
     localStorage.removeItem(STORAGE_PREFIX + key);
 }
